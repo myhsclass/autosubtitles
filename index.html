@@ -3,18 +3,49 @@
 <head>
   <meta charset="utf8">
   <title>Camera Test</title>
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" /> -->
-  <meta name="viewport" content="width=320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+  <!-- <meta name="viewport" content="width=320"> -->
   <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 </head>
 <body>
-
   <!-- カメラ映像 -->
   <video id="video" muted autoplay playsinline></video>
+  <script>
+    //<video id="videoFrame">の幅と高さを設定。タグの後でないと動かないのでここに書いている
+    const videoWidth = window.innerWidth;
+    const videoHeight = window.innerHeight;
+    console.log(videoHeight)
+    const video = document.getElementById("video");
+    //.setAttributeは要素の属性を追加。幅と高さを追加
+   
 
- <div class="textFrame">
+    
+
+const videoSetting = {
+  audio: false,
+  video: {
+    width:videoWidth,
+    height:videoHeight,
+    frameRate: 4,
+    facingMode: "user"
+  }
+};
+
+const promise = navigator.mediaDevices.getUserMedia(videoSetting);
+
+promise.then(successCallback)
+  .catch(errorCallback);
+
+function successCallback(stream) {
+  video.srcObject = stream;
+};
+
+function errorCallback(err) {
+  alert(err);
+};
+
+    </script>
   <div id="speechText">ここに字幕が表示されます</div>
-  </div>
   <script src="js/myScript.js"></script>
 </body>
 </html>

@@ -1,35 +1,6 @@
 // myScript.js
 // {exact: "environment"}
 //
-const video = document.getElementById("video");
-const w = window.innerWidth;
-const h = window.innerHeight;
-
-const w01 = Math.floor(window.innerWidth/10);
-const h01 = Math.floor(window.innerHeight/10);
-
-const videoSetting = {
-  audio: false,
-  video: {
-    width: w,
-    height:h,
-    frameRate: 4,
-    facingMode: {exact: "environment"}
-  }
-};
-
-const promise = navigator.mediaDevices.getUserMedia(videoSetting);
-
-promise.then(successCallback)
-  .catch(errorCallback);
-
-function successCallback(stream) {
-  video.srcObject = stream;
-};
-
-function errorCallback(err) {
-  alert(err);
-};
 
 
 // ブラウザが音声合成に対応しているかチェック

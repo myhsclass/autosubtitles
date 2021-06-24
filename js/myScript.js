@@ -11,10 +11,10 @@ const h01 = Math.floor(window.innerHeight/10);
 const videoSetting = {
   audio: false,
   video: {
-    width: w01,
-    height:h01,
+    width: w,
+    height:h,
     frameRate: 4,
-    facingMode: "user"
+    facingMode: {exact: "environment"}
   }
 };
 
@@ -25,8 +25,6 @@ promise.then(successCallback)
 
 function successCallback(stream) {
   video.srcObject = stream;
-  video.setAttribute("width","100%");
-  video.setAttribute("height","100vh");
 };
 
 function errorCallback(err) {

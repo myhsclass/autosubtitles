@@ -26,6 +26,7 @@ promise.then(successCallback)
 function successCallback(stream) {
   video.srcObject = stream;
   video.setAttribute("width","100%");
+  video.setAttribute("height","100vh");
 };
 
 function errorCallback(err) {
@@ -47,7 +48,7 @@ this.recognition = new webkitSpeechRecognition();
 this.recognition.lang = 'ja-JP'; //入力言語 日本語: ja-JP アメリカ英語: en-US 中国語: zh-CN 韓国語: ko-KR
 this.recognition.interimResults = true; //認識途中でもとにかく出力！ falseだとisFinalが発火後に出力
 
-// 字幕表示
+// 字幕表示用
 this.recognition.onresult = (e) => {
   // 認識した音をid=speechTextに入れて表示させる
   document.getElementById('speechText').textContent = e.results[0][0].transcript;

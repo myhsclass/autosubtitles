@@ -14,7 +14,7 @@ const videoSetting = {
     width: w01,
     height:h01,
     frameRate: 4,
-    facingMode: {exact: "environment"}
+    facingMode: "user"
   }
 };
 

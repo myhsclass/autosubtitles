@@ -5,13 +5,13 @@
 
 // ブラウザが音声合成に対応しているかチェック
 SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
-if ('SpeechRecognition' in window) {
-  // ユーザのブラウザは音声合成に対応しています。
-  alert("音声合成に対応しています");
-} else {
-  // ユーザのブラウザは音声合成に対応していません。
-  alert("音声合成に対応していません");
-}
+// if ('SpeechRecognition' in window) {
+//   // ユーザのブラウザは音声合成に対応しています。
+//   alert("音声合成に対応しています");
+// } else {
+//   // ユーザのブラウザは音声合成に対応していません。
+//   alert("音声合成に対応していません");
+// }
 // safari=webkitなのでプレフィックスwebkitを入れる
 this.recognition = new webkitSpeechRecognition();
 this.recognition.lang = 'ja-JP'; //入力言語 日本語: ja-JP アメリカ英語: en-US 中国語: zh-CN 韓国語: ko-KR

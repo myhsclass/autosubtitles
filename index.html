@@ -13,8 +13,10 @@
 
   <script>
     //<video id="videoFrame">の幅と高さを設定。タグの後でないと動かないのでここに書いている
-    const videoWidth = window.innerWidth/10;
-    const videoHeight = window.innerHeight/10;
+    // const videoWidth = window.innerWidth/10;
+    // const videoHeight = window.innerHeight/10;
+    const videoWidth = 200;
+    const videoHeight = 200;
     console.log("videoWidth :: "+videoWidth)
     console.log("videoHeight :: "+videoHeight)
     const video = document.getElementById("video");
@@ -42,8 +44,8 @@ promise.then(successCallback)
 function successCallback(stream) {
   video.srcObject = stream;
   alert("width :: "+window.innerWidth+" height :: "+window.innerHeight);
-  video.setAttribute("width",videoWidth*10);
-  video.setAttribute("height",videoHeight*10);
+  video.setAttribute("width",videoWidth*2);
+  video.setAttribute("height",videoHeight*2);
   video.setAttribute("autoplay",true);
 };
 

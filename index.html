@@ -44,8 +44,8 @@ promise.then(successCallback)
 function successCallback(stream) {
   video.srcObject = stream;
   alert("width :: "+window.innerWidth+" height :: "+window.innerHeight);
-  video.setAttribute("width",videoWidth*2);
-  video.setAttribute("height",videoHeight*2);
+  video.setAttribute("width",window.innerWidth);
+  video.setAttribute("height",window.innerWidth);
   video.setAttribute("autoplay",true);
 };
 

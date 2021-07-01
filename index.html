@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf8">
   <title>Camera Test</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 </head>
 <body>
   
   <!-- カメラ映像 -->
-  <video id="video" muted autoplay playsinline></video>
+  <video id="video" muted></video>
 
   <script>
     //<video id="videoFrame">の幅と高さを設定。タグの後でないと動かないのでここに書いている
@@ -21,8 +21,8 @@
 
     //.setAttributeは要素の属性を追加。幅と高さを追加
    
-
-    
+// {exact: "environment"}
+// "user"
 
 const videoSetting = {
   audio: false,
@@ -42,8 +42,9 @@ promise.then(successCallback)
 function successCallback(stream) {
   video.srcObject = stream;
   alert("width :: "+window.innerWidth+" height :: "+window.innerHeight);
-  video.setAttribute("width",window.innerWidth);
-  video.setAttribute("height",window.innerHeight);
+  video.setAttribute("width",videoWidth*10);
+  video.setAttribute("height",videoHeight*10);
+  video.setAttribute("autoplay",true);
 };
 
 function errorCallback(err) {
